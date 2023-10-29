@@ -35,7 +35,7 @@ else:
     os.getenv("DEBUG") == False
 # DEBUG = "True"
 
-ALLOWED_HOSTS = ['franklymade.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['tapcord.onrender.com', 'localhost', '127.0.0.1']
 
 # ALLOWED_HOSTS = ['https://presictravels.herokuapp.com/', 'http://presictravels.herokuapp.com/', '127.0.0.1']
 
