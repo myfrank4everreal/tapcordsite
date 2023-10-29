@@ -1,0 +1,44 @@
+
+{% load static %}
+
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'tapcordsite/img/logo.png' %}" alt=""></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'about_us' %}">What we do</a></li>
+                        <li><a href="{% url 'about_us' %}">Our Hisrory</a></li>
+                        <li><a href="{% url 'about_us' %}">Our Leadership</a></li>
+                        <li><a href="{% url 'about_us' %}">Press about us</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="{% url 'team' %}">Our Team</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'services' %}">Cancer Center</a></li>
+                        <li><a href="{% url 'services' %}">Rehabilitation Center</a></li>
+                        <li><a href="{% url 'services' %}">Gastro Labs</a></li>
+                        <li><a href="{% url 'services' %}">Emergency Room</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li><a href="{% url 'contact' %}">Contact us</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
