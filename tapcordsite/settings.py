@@ -35,7 +35,7 @@ else:
     os.getenv("DEBUG") == False
 
 
-ALLOWED_HOSTS = ['https://franklymade.render.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['https://franklymade.onrender.com/', '127.0.0.1', 'localhost']
 
 
 # Application definition
