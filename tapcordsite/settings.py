@@ -33,10 +33,11 @@ if os.getenv("DEBUG") == True :
     os.getenv("DEBUG") == True
 else:
     os.getenv("DEBUG") == False
+# DEBUG = "True"
 
+ALLOWED_HOSTS = ['franklymade.onrender.com', 'localhost', '127.0.0.1']
 
-ALLOWED_HOSTS = ['https://franklymade.onrender.com/', '127.0.0.1', 'localhost']
-
+# ALLOWED_HOSTS = ['https://presictravels.herokuapp.com/', 'http://presictravels.herokuapp.com/', '127.0.0.1']
 
 # Application definition
 
