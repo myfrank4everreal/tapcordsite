@@ -1,0 +1,144 @@
+
+
+.tap_logo {
+    width: auto;
+    height: 50px;
+    margin-top: -20px;
+}
+
+.appointment {
+    color: #fff;
+    padding: 4px 15px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-color: #f66808;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
+    -ms-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
+    border: 0px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    background-color: #041e37;
+
+}
+
+
+.navbar-default .navbar-nav > li > a {
+    color: #eef3fa;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: #f66808;
+    background-color: transparent;
+}
+
+
+/* the carousel write up */
+.second-head {
+    color: #f66808;
+}
+
+.center-title h2 {
+    text-transform: capitalize;
+    letter-spacing: -1px;
+    font-weight: 300;
+    color: #f66808 !important; 
+    margin-bottom: 20px;
+}
+
+.service-box i {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    background-color: #f66808;
+    font-size: 30px;
+    margin-top: -60px;
+    position: relative;
+    -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.service-box {
+    border: 1px solid #041e37;
+    margin-bottom: 30px;
+}
+
+.btn-theme-bg {
+    background-color: #f66808;
+    color: #fff;
+}
+
+.center-title i {
+    display: inline-block;
+    color: #f66808;
+    margin-bottom: 25px;
+    font-size: 50px;
+}
+
+/* the video section */
+
+.collapse-colored-col .panel-heading {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 0px;
+    background-color: #f66808;
+    padding: 5px 15px;
+}
+
+.collapse-colored-col .panel, .collapse-colored-col .panel-default {
+    border: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 0px;
+    background-color: #041e37;
+    color: #fff;
+}
+
+.ads-section {
+    background-color: #041e37;
+    padding: 50px 0;
+}
+
+.footer {
+    background-color: #041e37;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+
+/* about us css style */
+.parallax {
+    min-height: 600px;
+    background: url(../img/medical/bg-5.jpg) no-repeat left top !important;
+}
+
+/* for the check boxes in about page */
+.about-page ul.list-unstyled li i {
+    color: #f66808;
+    margin-right: 10px;
+}
