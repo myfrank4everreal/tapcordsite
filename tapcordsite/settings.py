@@ -30,19 +30,25 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-DEBUG = os.getenv("DEBUG")
-if os.getenv(DEBUG) == "True" :
-    DEBUG = os.getenv(DEBUG)
+
+if os.getenv("DEBUG") == "True" :
+    DEBUG = os.getenv("DEBUG")
 else:
-    DEBUG = os.getenv(DEBUG) == "False"
+    DEBUG = os.getenv("DEBUG") == "False"
 
 
+if DEBUG == "True" :
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-ALLOWED_HOSTS = ['tapcord.onrender.com', 'localhost', '127.0.0.1']
+    print(f'this is the debug {DEBUG}')
+    
+else:
+    ALLOWED_HOSTS = ['tapcord.onrender.com', 'localhost', '127.0.0.1']
 
 # ALLOWED_HOSTS = ['https://presictravels.herokuapp.com/', 'http://presictravels.herokuapp.com/', '127.0.0.1']
 
 # Application definition
+
 
 INSTALLED_APPS = [
     'tapcord',
