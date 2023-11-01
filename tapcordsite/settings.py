@@ -35,20 +35,25 @@ if os.getenv("DEBUG") == "True" :
     DEBUG = os.getenv("DEBUG")
 else:
     DEBUG = os.getenv("DEBUG") == "False"
-
-
-if DEBUG == "True" :
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
-    print(f'this is the debug {DEBUG}')
     
-else:
-    ALLOWED_HOSTS = ['tapcord.onrender.com', 'localhost', '127.0.0.1']
 
+DEBUG = "True"
+
+ALLOWED_HOSTS = []
+
+# if DEBUG == "True" :
+#     ALLOWED_HOSTS = []
+
+#     print(f'this is the debug {DEBUG}')
+    
+# else:
+#     ALLOWED_HOSTS = ['tapcord.onrender.com', 'localhost', '127.0.0.1']
+#     print(f'debug is {DEBUG} here')
 # ALLOWED_HOSTS = ['https://presictravels.herokuapp.com/', 'http://presictravels.herokuapp.com/', '127.0.0.1']
 
 # Application definition
 
+print(f'this is the value of Debug in production: {DEBUG} ')
 
 INSTALLED_APPS = [
     'tapcord',
@@ -145,6 +150,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

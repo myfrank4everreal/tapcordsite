@@ -136,10 +136,23 @@
     color: #fff;
 }
 
+/* for the request quota home service banner */
 .ads-section {
     background-color: #041e37;
     padding: 50px 0;
 }
+
+.ads-section1 {
+    background-color: #041e37;
+    padding: 50px 0;
+}
+
+.home_service_banner {
+    background-color: #f66808;
+    padding: 50px 0;
+}
+/* (((((((()))))))))) */
+
 
 .footer {
     background-color: #041e37;
