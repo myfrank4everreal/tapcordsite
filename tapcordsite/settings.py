@@ -32,9 +32,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv("DEBUG")
 if os.getenv(DEBUG) == "True" :
-    os.getenv(DEBUG) == "True"
+    DEBUG = os.getenv(DEBUG)
 else:
-    os.getenv(DEBUG) == "False"
+    DEBUG = os.getenv(DEBUG) == "False"
 
 
 
