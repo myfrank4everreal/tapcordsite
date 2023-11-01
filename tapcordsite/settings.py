@@ -39,7 +39,7 @@ else:
 
 DEBUG = "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tapcord.onrender.com', 'localhost', '127.0.0.1']
 
 # if DEBUG == "True" :
 #     ALLOWED_HOSTS = []
