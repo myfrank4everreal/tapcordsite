@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+        <div class="custom-breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Our Posts</h2>
+                    </div>
+                </div>
+            </div>
+        </div><!--breadcrumb-->
+        <div class="divide70"></div>
+
+        <div class="container">
+            <div class="row">
+                {% for postitem in posts %}
+                <div class="col-sm-4 margin30">
+                    <div class="service-box">
+                        <img src="{{postitem.image.url}}" class="img-responsive" alt="">
+                        <!-- <i class="fa fa-medkit"></i> -->
+                        <h4>{{postitem.title}}</h4>
+                        <p>
+                            {{postitem.shotend_desc}}
+                        </p>
+                        <a href="#" class="btn btn-theme-bg">Read more...</a>
+                    </div>
+                </div><!--col end-->
+                {% endfor %}
+
+
+            </div><!--row end-->
+        </div>
+        <!--services container-->
+
+
+ 		<div class="divide30"></div>
+
+         {% include 'included/testimonials_section.html' %}
+        <!--testimonials end-->
+
+
+
+
+        {% include 'included/request_quota_banner.html'%}
+
+
+        {% include 'included/featured_blog_section.html'%}
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+
+.bg-light {
+    --bs-bg-opacity: 1;
+    /* background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important; */
+    background: url(../image/bg-5.jpg) no-repeat left top !important;
+    
+    
+    /* background-color:#041e37 !important; */
+
+}
+/* C:\Users\dell\Desktop\mydev\tapcord\tapcordsite\tapcordsite\static\tapcordsite\img\medical\bg-5.jpg */
+.blog-banner {
+    --bs-bg-opacity: 1;
+    /* background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important; */
+    /* background: url(../img/medical/bg-5.jpg) no-repeat left top !important; */
+}
+
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color:#041e37 !important;
+}

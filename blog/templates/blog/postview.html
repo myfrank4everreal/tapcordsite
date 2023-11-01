@@ -1,0 +1,125 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+        <div class="custom-breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Tapcord post</h2>
+                    </div>
+                </div>
+            </div>
+        </div><!--breadcrumb-->
+        <div class="parallax" data-stellar-background-ratio="0.5"></div>
+        <div class="divide70"></div>
+
+        <div class="container about-page">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Welcome to <strong>Tapcord Engineering</strong></h1>
+                    <p class="lead">
+                        If you need a professional hands to help you achieve your project goals then you are in the right place
+                    </p>
+                </div>
+            </div><!--end row-->
+            <div class="row">
+                <div class="col-md-7 margin30">
+                    <!--bootstrap carousel slider-->
+                    <div id="about-carousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#about-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#about-carousel" data-slide-to="1"></li>
+                            <li data-target="#about-carousel" data-slide-to="2"></li>
+                            <li data-target="#about-carousel" data-slide-to="3"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="{% static 'tapcordsite/img/medical/equp-5.jpg' %}" alt="img">
+                            </div>
+
+                            <div class="item">
+                                <img src="{% static 'tapcordsite/img/medical/equp-6.jpg' %}" alt="img">
+                            </div>
+
+                            <div class="item">
+                                <img src="{% static 'tapcordsite/img/medical/equp-7.jpg' %}" alt="img">
+                            </div>
+
+                            <div class="item">
+                                <img src="{% static 'tapcordsite/img/medical/equp-8.jpg' %}" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h4>
+                       Electrical Services
+                    </h4>
+                    
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check-square"></i>Installation, repair and maintenance of electrical system</li>
+                        <li><i class="fa fa-check-square"></i>Smart home automation system installation and maintenance</li>
+                        <li><i class="fa fa-check-square"></i>CCTV camera installation</li>
+                        <li><i class="fa fa-check-square"></i>Heat detector and fire alarm system/li>
+                        <li><i class="fa fa-check-square"></i>Household, commercial and industrial electrical system maintenance</li>
+                        <li><i class="fa fa-check-square"></i>Cancer and AIDS Specialists</li>
+                    </ul>
+
+                    <h4>
+                        plumbing Services
+                    </h4>
+                     
+                     <ul class="list-unstyled">
+                         <li><i class="fa fa-check-square"></i>Plumbing system installation and repirs</li>
+                         <li><i class="fa fa-check-square"></i>Heat pumps and installation</li>
+                         <li><i class="fa fa-check-square"></i>installation of sanitary wares</li>
+                         <li><i class="fa fa-check-square"></i>Household, commercial & industrial building renovations/maintenance/li>
+                         <li><i class="fa fa-check-square"></i>Heat detector and fire alarm system/li>
+                         <li><i class="fa fa-check-square"></i>Block drain Fixes</li>
+                         <li><i class="fa fa-check-square"></i>Liking pipe fixes</li>
+                     </ul>
+
+
+                    <p>
+                    	We are your reliable partner for all your electrical, plumbing and facility management needs. we offer exceptional services and solution for our residential, commercial and industrial clients.
+                        with years of experience in the industry we take great pride in our experties, reliability and commitment to service, having realised that clients success is our drive therefore we go above and 
+                        beyond to ensure that we delever the right result and at the right time.
+                    </p>
+                    <p>
+                        so therefore if accomplishment is what you seek<a class="second-head" href="{% url 'contact' %}"> CONTACT US</a> today we would be more eager to guide and assist you.
+                    </p>
+                </div>
+            </div><!--end row-->
+        </div>
+        <div class="divide30"></div>
+        
+        <!-- meat our team or specialist section -->
+        <!-- {% include 'included/our_team_section.html' %} -->
+       <!--team section end-->
+
+
+            <!-- video representation section or know more section -->
+        {% include 'included/featured_blog_section.html' %}
+        <!--know more section end-->
+
+        <!--know more section end-->
+        
+
+
+       <!-- testimonials section -->
+ {% include 'included/testimonials_section.html' %}
+<!--testimonials end-->
+
+
+
+<!-- request quota section -->
+{% include 'included/request_quota_banner.html' %}
+<!--testimonials end-->
+{% endblock %}

@@ -15,72 +15,19 @@
 
         <div class="container">
             <div class="row">
+                {% for item in gallery %}
                 <div class="col-sm-6 col-md-3 margin20 ">
                     <div class="gallery">
-                        <img src="{% static 'tapcordsite/img/medical/service-1.jpg' %}" alt="gallery-img" class="img-responsive">
+                        <!-- <img src="{% static 'tapcordsite/img/medical/service-1.jpg' %}" alt="gallery-img" class="img-responsive"> -->
+                        <img src="{{item.image.url}}" alt="gallery-img" class="img-responsive">
+                        
                         <div class="gallery-overlay">
-                            <p><a href="{% static 'tapcordsite/img/medical/service-1.jpg' %}" class="show-image"><i class="glyphicon glyphicon-eye-open"></i></a></p>
+                            <p><a href="{{item.image.url}}" class="show-image"><i class="glyphicon glyphicon-eye-open"></i></a></p>
                         </div>
                     </div>
                 </div><!--col-->
-                <div class="col-sm-6 col-md-3 margin20 ">
-                    <div class="gallery">
-                        <img src="{% static 'tapcordsite/img/medical/service-2.jpg' %}" alt="gallery-img" class="img-responsive">
-                        <div class="gallery-overlay">
-                            <p><a href="{% static 'tapcordsite/img/medical/service-2.jpg' %}" class="show-image"><i class="glyphicon glyphicon-eye-open"></i></a></p>
-                        </div>
-                    </div>
-                </div><!--col-->
-                <div class="col-sm-6 col-md-3 margin20 ">
-                    <div class="gallery">
-                        <img src="{% static 'tapcordsite/img/medical/service-3.jpg' %}" alt="gallery-img" class="img-responsive">
-                        <div class="gallery-overlay">
-                            <p><a href="{% static 'tapcordsite/img/medical/service-3.jpg' %}" class="show-image"><i class="glyphicon glyphicon-eye-open"></i></a></p>
-                        </div>
-                    </div>
-                </div><!--col-->
-                <div class="col-sm-6 col-md-3 margin20 ">
-                    <div class="gallery">
-                        <img src="{% static 'tapcordsite/img/medical/service-4.jpg' %}" alt="gallery-img" class="img-responsive">
-                        <div class="gallery-overlay">
-                            <p><a href="img/medical/service-4.jpg" class="show-image"><i class="glyphicon glyphicon-eye-open"></i></a></p>
-                        </div>
-                    </div>
-                </div><!--col-->
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-3 margin20 ">
-                    <div class="gallery">
-                        <img src="{% static 'tapcordsite/img/medical/service-5.jpg' %}" alt="gallery-img" class="img-responsive">
-                        <div class="gallery-overlay">
-                            <p><a href="img/medical/service-5.jpg" class="show-image"><i class="glyphicon glyphicon-eye-open"></i></a></p>
-                        </div>
-                    </div>
-                </div><!--col-->
-                <div class="col-sm-6 col-md-3 margin20 ">
-                    <div class="gallery">
-                        <img src="{% static 'tapcordsite/img/medical/service-6.jpg' %}" alt="gallery-img" class="img-responsive">
-                        <div class="gallery-overlay">
-                            <p><a href="{% static 'tapcordsite/img/medical/service-6.jpg' %}" class="show-image"><i class="glyphicon glyphicon-eye-open"></i></a></p>
-                        </div>
-                    </div>
-                </div><!--col-->
-                <div class="col-sm-6 col-md-3 margin20 ">
-                    <div class="gallery">
-                        <img src="{% static 'tapcordsite/img/medical/service-7.jpg' %}" alt="gallery-img" class="img-responsive">
-                        <div class="gallery-overlay">
-                            <p><a href="{% static 'tapcordsite/img/medical/service-7.jpg' %}" class="show-image"><i class="glyphicon glyphicon-eye-open"></i></a></p>
-                        </div>
-                    </div>
-                </div><!--col-->
-                <div class="col-sm-6 col-md-3 margin20 ">
-                    <div class="gallery">
-                        <img src="{% static 'tapcordsite/img/medical/service-8.jpg' %}" alt="gallery-img" class="img-responsive">
-                        <div class="gallery-overlay">
-                            <p><a href="{% static 'tapcordsite/img/medical/service-8.jpg' %}" class="show-image"><i class="glyphicon glyphicon-eye-open"></i></a></p>
-                        </div>
-                    </div>
-                </div><!--col-->
+                {% endfor %}
+               
             </div>
             <div class="divide10"></div>
             <ul class="pagination pull-right">

@@ -1,9 +1,23 @@
 from django.shortcuts import render
+from .models import Gallery
+
+from blog.models import BlogPost
+
+
+
+
+
+
+
+
+
 
 # Create your views here.
 
 def home(request):
-    context = {}
+    posts = BlogPost.objects.all()
+
+    context = {'posts':posts}
     return render(request, 'tapcord/home.html', context)
 
 
@@ -18,7 +32,8 @@ def contact(request):
 
 
 def gallery(request):
-    context = {}
+    gallery = Gallery.objects.all()
+    context = {'gallery':gallery}
     return render(request, 'tapcord/gallery.html', context)
 
 

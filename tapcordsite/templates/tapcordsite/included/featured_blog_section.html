@@ -1,0 +1,28 @@
+
+{% load static %}
+
+<section class="blog-home">
+    <div class="container">
+        <div class="center-title">
+            <i class="glyphicon glyphicon-wrench"></i>
+            <h2>Featured<strong> post</strong></h2>                        
+        </div>
+        <div class="row">
+            {% for postitem in posts%}
+            <div class="col-md-4 margin30">
+                <div class="blog-post">
+                    <img src="{{postitem.image.url}}" alt="" class="img-responsive">
+                    <h3>
+                        <a href="#">{{postitem.title}}</a>
+                    </h3>
+                    <span>July 12, 2015 Dr. Lorem</span>
+                    <p>
+                        {{postitem.shotend_desc}}
+                    </p>
+                    <p><a href="#">Read more...</a></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+  </section>

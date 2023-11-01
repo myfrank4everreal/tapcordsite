@@ -26,10 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
-print(SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-print(os.getenv("DEBUG"))
+
 
 DEBUG = os.getenv("DEBUG")
 if os.getenv(DEBUG) == "True" :
@@ -47,6 +46,7 @@ ALLOWED_HOSTS = ['tapcord.onrender.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'tapcord',
+    'blog',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -74,7 +74,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'tapcordsite/templates/tapcordsite')
+            os.path.join(BASE_DIR, 'tapcordsite/templates/tapcordsite'),
+            os.path.join(BASE_DIR, 'blog/templates/blog')
+
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -144,7 +146,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'tapcordsite/static/'),
-    # os.path.join(BASE_DIR, 'travel/static'),
+    
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
