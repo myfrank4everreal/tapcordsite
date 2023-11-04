@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 
 from dotenv import load_dotenv
+import dj_database_url
 
 load_dotenv()
 
@@ -105,6 +106,18 @@ WSGI_APPLICATION = 'tapcordsite.wsgi.application'
 
 
 # Database
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+DATABASES = {
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        default='postgres://tapcord_database_user:Tj2KeZI1q3cbhnO6gyqYMSU1qy1rsjSm@dpg-cl1c608p2gis739ajpkg-a.oregon-postgres.render.com/tapcord_database',
+        
+        conn_max_age=600
+    )
+}
+
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {

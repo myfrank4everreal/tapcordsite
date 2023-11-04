@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import BlogPost
 # Create your views here.
 
 
-def post(request):
+def posts(request):
     posts = BlogPost.objects.all()
     most_recent_post = BlogPost.objects.order_by("-post_date")[0:1]
 
@@ -14,3 +14,5 @@ def post(request):
         }
     # return render(request, 'blog/posthome.html', context)
     return render(request, 'blog/boostrapbloghome.html', context)
+
+
