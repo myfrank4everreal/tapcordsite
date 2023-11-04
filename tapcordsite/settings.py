@@ -109,23 +109,28 @@ WSGI_APPLICATION = 'tapcordsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgres://tapcord_database_user:Tj2KeZI1q3cbhnO6gyqYMSU1qy1rsjSm@dpg-cl1c608p2gis739ajpkg-a.oregon-postgres.render.com/tapcord_database',
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Feel free to alter this value to suit your needs.
+#         default='postgres://tapcord_database_user:Tj2KeZI1q3cbhnO6gyqYMSU1qy1rsjSm@dpg-cl1c608p2gis739ajpkg-a.oregon-postgres.render.com/tapcord_database',
         
-        conn_max_age=600
-    )
-}
+#         conn_max_age=600
+#     )
+# }
 
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
-}
+
 
 
 # Password validation
