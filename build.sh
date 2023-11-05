@@ -13,3 +13,8 @@ python manage.py migrate
 # DJANGO_SUPERUSER_PASSWORD = <...>
 # DJANGO_SUPERUSER_USERNAME =<...>
 # this is the code snipet to run django admin on render on free plan
+
+CREATE_SUPERUSER = True
+DJANGO_SUPERUSER_EMAIL = os.getenv("DJANGO_SUPERUSER_EMAIL")
+DJANGO_SUPERUSER_PASSWORD = os.getenv("DJANGO_SUPERUSER_PASSWORD")
+DJANGO_SUPERUSER_USERNAME = os.getenv("USER_USERNAME")
