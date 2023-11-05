@@ -14,7 +14,14 @@ python manage.py migrate
 # DJANGO_SUPERUSER_USERNAME =<...>
 # this is the code snipet to run django admin on render on free plan
 
-CREATE_SUPERUSER = True
-DJANGO_SUPERUSER_EMAIL = os.getenv("DJANGO_SUPERUSER_EMAIL")
-DJANGO_SUPERUSER_PASSWORD = os.getenv("DJANGO_SUPERUSER_PASSWORD")
-DJANGO_SUPERUSER_USERNAME = os.getenv("USER_USERNAME")
+# this should actually be added to the environment variables of the render dashboard
+
+# CREATE_SUPERUSER = True
+# DJANGO_SUPERUSER_EMAIL = os.getenv("DJANGO_SUPERUSER_EMAIL")
+# DJANGO_SUPERUSER_PASSWORD = os.getenv("DJANGO_SUPERUSER_PASSWORD")
+# DJANGO_SUPERUSER_USERNAME = os.getenv("USER_USERNAME")
+
+if [[ $CREATE_SUPERUSER ]];
+then
+  python world_champ_2022/manage.py createsuperuser --no-input
+fi
