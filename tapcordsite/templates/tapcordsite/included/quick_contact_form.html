@@ -1,0 +1,58 @@
+{% load static %}
+
+<div class="containe ads-section1  ">
+    <div class="row container">
+        <div class="contact-info">
+                         
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="col-md-12"> 
+          <!-- IMPORTANT: change the email address at the top of the mail/mail.php file to the email address that you want this form to send to -->
+          <form class="form-style validate-form clearfix" action="{% static 'tapcordsite/mail/mail.php' %}" method="POST" role="form">
+            
+            <!-- Left Column -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="text-field form-control validate-field required" data-validation-type="string" 
+                                            id="form-name" placeholder="Full Name" name="name">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="text-field form-control validate-field required" data-validation-type="email" 
+                                            id="form-email" placeholder="Email Address" name="email">
+                </div>
+                <div class="form-group">
+                  <input type="tel" class="text-field form-control validate-field phone" data-validation-type="phone" 
+                                            id="form-contact-number" placeholder="Contact Number" name="contact_number">
+                </div>
+                <div class="form-group text-right"> 
+                  <img id="form-captcha-img" src="{% static 'tapcordsite/mail/captcha/captcha.php' %}">
+                  
+                  <span id="form-captcha-refresh" class="fa fa-refresh" title="Reload"></span> 
+                  <input type="text" class="text-field form-control validate-field required" data-validation-type="captcha" 
+                                            id="form-captcha" placeholder="Enter text" name="captcha">
+                </div>
+              </div>
+            
+            <!-- END: Left Column --> 
+            
+            
+              <!-- Right Column -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <textarea placeholder="Message..." class="form-control validate-field required" name="message"></textarea>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-lg btn-outline-inverse  submit">Submit</button>
+                </div>
+                <div class="form-group form-general-error-container"></div>
+              </div>
+              <!-- END: Right Column -->
+            </div>
+          </form>
+        </div>
+        <!-- END: Contact Form --> 
+
+    </div>
+</div>

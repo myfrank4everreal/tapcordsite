@@ -139,12 +139,17 @@
 /* for the request quota home service banner */
 .ads-section {
     background-color: #041e37;
-    padding: 50px 0;
+    padding: 50px 50px;
+}
+.ads-section1 {
+    background-color: #ad1b47;
+    /* padding: 50px 50px; */
+    text-align: center;
 }
 
-.ads-section1 {
-    background-color: #041e37;
-    padding: 50px 0;
+.quick_contact_form {
+    background-color: #041e37 !important;
+    padding: 50px 50px !important;
 }
 
 .home_service_banner {
