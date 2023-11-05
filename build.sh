@@ -21,12 +21,15 @@ python manage.py migrate
 # DJANGO_SUPERUSER_PASSWORD = os.getenv("DJANGO_SUPERUSER_PASSWORD")
 # DJANGO_SUPERUSER_USERNAME = os.getenv("USER_USERNAME")
 
+# if [[ $CREATE_SUPERUSER ]];
+# then
+#   python world_champ_2022/manage.py createsuperuser --no-input
+# fi
+
 if [[ $CREATE_SUPERUSER ]];
 then
-  python world_champ_2022/manage.py createsuperuser --no-input
+  python tapcordsite/manage.py createsuperuser --no-input
 fi
-
-
 
 
 
