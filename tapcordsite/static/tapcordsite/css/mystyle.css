@@ -117,6 +117,13 @@
     font-size: 50px;
 }
 
+.center-title h3 {
+    display: inline-block;
+    color: #f66808;
+    margin-bottom: 25px;
+    font-size: 50px;
+}
+
 /* the video section */
 
 .collapse-colored-col .panel-heading {

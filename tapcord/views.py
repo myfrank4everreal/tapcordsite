@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Gallery
+from .models import Gallery, NewsLetterMember
 
 from blog.models import BlogPost
 from .forms import ContactForm
@@ -12,6 +12,7 @@ from django.core.mail import send_mail
 def home(request):
     
     success_msg = ""
+    e= ""
     msg=""
     myform = ContactForm()
 
@@ -40,14 +41,27 @@ def home(request):
 
 
             print('form is save successfully')
-            msg= "Your message was successfully sent we would reply you shortly"
-            
+            e= "Your message was successfully sent we would reply you shortly"
+            msg=e
             return redirect('home')
         else:
             myform = ContactForm()
+    if msg:
+        success_msg = msg
     
-    success_msg = msg
+    # news_letter_form = NewsLetterMember()
+    news_letter_form=NewsLetterMember()
+    if request.method == "POST":
+        news_letter_form=NewsLetterMember(request.POST)
+        new_member=news_letter_form.save()
+        print(new_member)
+    else:
+        news_letter_form = NewsLetterMember()
+
+    
     context = {
+        
+        'news_letter_form':news_letter_form,
         'posts':posts,
         'myform':myform,
         'success_msg':success_msg
