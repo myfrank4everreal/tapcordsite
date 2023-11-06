@@ -131,7 +131,14 @@ DATABASES = {
     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
 
-
+# for email smtp
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+# EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'frankmadu2live@gmail.com'
+EMAIL_HOST_PASSWORD = 'bhtm tcvp cbis hbja.'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

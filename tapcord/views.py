@@ -35,7 +35,7 @@ def home(request):
             
             # if message:
                 # recipients.append(sender)
-            send_mail(f'{subject}', f'{message}', f'{sender}', ['frank4everreal@gmai.com'])
+            send_mail(f'{subject}', f'{message}', f'{sender}', ['frankmadu2live@gmail.com'])
 
 
 
