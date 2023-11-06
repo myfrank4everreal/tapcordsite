@@ -1,23 +1,57 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Gallery
 
 from blog.models import BlogPost
+from .forms import ContactForm
+from django.core.mail import send_mail
 
 
 
 
-
-
-
-
-
-
-# Create your views here.
 
 def home(request):
-    posts = BlogPost.objects.all()
+    
+    success_msg = ""
+    msg=""
+    myform = ContactForm()
 
-    context = {'posts':posts}
+
+    posts = BlogPost.objects.all()
+    
+    if request.method == 'POST':
+        myform = ContactForm(request.POST)
+        if myform.is_valid():
+            subject = myform.cleaned_data['name']
+            
+            message = myform.cleaned_data['message']
+            print(message)
+            contact_number = myform.cleaned_data['contact_number']
+            sender = myform.cleaned_data['email']
+            print(sender)
+            
+            
+            
+            recipients = ['frank4everreal@gmail.com', 'myfran4everreal@gmail.com']
+            
+            # if message:
+                # recipients.append(sender)
+            send_mail(f'{subject}', f'{message}', f'{sender}', ['frank4everreal@gmai.com'])
+
+
+
+            print('form is save successfully')
+            msg= "Your message was successfully sent we would reply you shortly"
+            
+            return redirect('home')
+        else:
+            myform = ContactForm()
+    
+    success_msg = msg
+    context = {
+        'posts':posts,
+        'myform':myform,
+        'success_msg':success_msg
+        }
     return render(request, 'tapcord/home.html', context)
 
 
