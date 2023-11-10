@@ -19,7 +19,7 @@
                     <p>
                         {{postitem.shotend_desc}}
                     </p>
-                    <p><a href="#">Read more...</a></p>
+                    <p><a href="{% url 'post' postitem.id %}">Read more...</a></p>
                 </div>
             </div>
             {% endfor %}

@@ -4,14 +4,7 @@
 
 
        {% block content %} 
-        <header class="py-5 bg-light  border-bottom mb-4">
-            <div class="container">
-                <div class="text-center my-5">
-                    <h1 class="fw-bolder">Tapcord</h1>
-                    <p class="lead mb-0">Keeping you updated with latest industry info</p>
-                </div>
-            </div>
-        </header>
+        
         <!-- Page content-->
         <div class="container">
             <div class="row">
@@ -25,24 +18,24 @@
                             <div class="small text-muted">January 1, 2023</div>
                             <h2 class="card-title">{{item.title}}</h2>
                             <p class="card-text">{{item.shotend_desc}}</p>
-                            <a class="btn btn-primary" href="#!">Read more →</a>
+                            <a class="btn btn-primary" href="{% url 'post' item.id %}">Read more →</a>
                         </div>
                     </div>
                     {% endfor %}
                     <!-- Nested row for non-featured blog posts-->
                     <div class="row">
-                        {% for postitem in posts %}
+                        {% for item in posts %}
                        
                         <div class="col-lg-6">
 
                             <!-- Blog post-->
                             <div class="card mb-4">
-                                <a href="#!"><img class="card-img-top" src="{{postitem.image.url}}" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="{{item.image.url}}" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">November 1, 2023</div>
-                                    <h2 class="card-title h4">{{postitem.title}}</h2>
-                                    <p class="card-text">{{postitem.shotend_desc}}</p>
-                                    <a class="btn btn-primary" href="#">Read more →</a>
+                                    <h2 class="card-title h4">{{item.title}}</h2>
+                                    <p class="card-text">{{item.shotend_desc}}</p>
+                                    <a class="btn btn-primary" href="{% url 'post' item.id %}">Read more →</a>
                                 </div>
                             </div>
                         </div>

@@ -3,7 +3,7 @@
 
 
 {% block content %}
-<div center-title>
+<div center-title style="color: black;">
     {% if success_msg %}
         <h3>{{success_msg}}</h3>
     {% endif %}
@@ -121,6 +121,7 @@
 
 
 
+
 <!-- video representation section or know more section -->
 {% include 'included/video_section.html' %}
 <!--know more section end-->
@@ -144,14 +145,14 @@
           <div class="col-sm-8 col-sm-offset-2 text-center">
               <h3>Subscribe to Newsletter</h3>
               <p>To stay up to date with industry best practices.</p>
-              <form class="form-inline" action="." method="">
+              <form class="form-inline" action="." method="post">
                 {% csrf_token %}
                 
                   <div class="form-group">
                     {{news_letter_form}}
                     <!-- <input type="text" name="email" class="form-control" id="email" placeholder="Your email"> -->
                   </div>
-                  <button type="submit" name="submit" class="btn btn-theme-bg btn-lg">Subscribe</button>
+                  <!-- <button type="submit" name="submit" class="btn btn-theme-bg btn-lg">Subscribe</button> -->
               </form>
           </div>
       </div>

@@ -50,15 +50,18 @@ def home(request):
         success_msg = msg
     
     # news_letter_form = NewsLetterMember()
-    news_letter_form=NewsLetterMember()
+    
     if request.method == "POST":
         news_letter_form=NewsLetterMember(request.POST)
-        new_member=news_letter_form.save()
-        print(new_member)
+        
+        news_letter_form.save()
+
+        return redirect('home')
+        
     else:
         news_letter_form = NewsLetterMember()
 
-    
+    news_letter_form = NewsLetterMember()
     context = {
         
         'news_letter_form':news_letter_form,
@@ -75,7 +78,44 @@ def about_us(request):
 
 
 def contact(request):
-    context = {}
+    msg = ""
+    success_msg = ""
+    if request.method == 'POST':
+        myform = ContactForm(request.POST)
+        if myform.is_valid():
+            subject = myform.cleaned_data['name']
+            
+            message = myform.cleaned_data['message']
+            print(message)
+            contact_number = myform.cleaned_data['contact_number']
+            sender = myform.cleaned_data['email']
+            print(sender)
+            
+            
+            
+            recipients = ['frank4everreal@gmail.com', 'myfran4everreal@gmail.com']
+            
+            # if message:
+                # recipients.append(sender)
+            send_mail(f'{subject}', f'{message}', f'{sender}', ['frankmadu2live@gmail.com'])
+
+
+
+            print('form is save successfully')
+            e= "Your message was successfully sent we would reply you shortly"
+            msg=e
+            return redirect('home')
+        else:
+            myform = ContactForm()
+    if msg:
+        success_msg = msg
+    
+    myform = ContactForm()
+
+    context = {
+        'success_msg':success_msg,
+        'myform':myform,
+    }
     return render(request, 'tapcord/contact.html', context)
 
 

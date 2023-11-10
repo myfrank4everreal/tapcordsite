@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 
@@ -8,7 +9,16 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
+
+class Comment(models.Model):
+    comment = models.TextField()
+    time_stamp = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    post = models.ForeignKey('BlogPost', related_name='comments', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.comment
     
+
 
 
 class BlogPost(models.Model):
@@ -26,3 +36,11 @@ class BlogPost(models.Model):
 
     def shotend_desc(self):
         return self.description[:200] + '...'
+
+
+    def get_comments(self):
+        return self.comments.all().order_by('-time_stamp')
+
+    
+    def comment_count(self):
+        return BlogPost.objects.filter(post=self).count()

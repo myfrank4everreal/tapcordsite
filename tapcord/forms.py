@@ -34,19 +34,16 @@ class ContactForm(forms.Form):
 #     cc_myself = forms.BooleanField(required=False)
 
 class NewsLetterMemberForm(ModelForm):
+    email = forms.CharField(widget=forms.Textarea(attrs={
+            'class':'form-control',
+            "name":"message",
+            "rows":"3",
+            "placeholder":"Join the discussion and leave a comment!"
+        }))
 
     class Meta:
-        model=NewsLetterMember
-        fields = ['email']
-        widgets = {
-        "email": forms.Textarea(attrs={
-        "class":'form-control', 
-        "id":'email', 
-        "placeholder":'your email', 
-        "type":'email'
-})
-        }
-
+        model = NewsLetterMember
+        fields = ['email',]
 
 
 

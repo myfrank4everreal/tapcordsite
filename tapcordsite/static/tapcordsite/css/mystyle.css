@@ -196,6 +196,14 @@
 }
 
 
+
+.media-body p {
+    color: #f66808 !important;
+    line-height: 24px;
+    margin: 0 0 20px;
+    font-weight: 400;
+}
+
 .home_service_banner {
     background-color: #f66808;
     padding: 50px 0;

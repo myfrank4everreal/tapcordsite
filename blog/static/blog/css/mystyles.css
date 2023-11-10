@@ -19,3 +19,8 @@
     --bs-bg-opacity: 1;
     background-color:#041e37 !important;
 }
+
+bg-secondary {
+    --bs-bg-opacity: 1;
+    background-color: #f66808 !important;
+}
