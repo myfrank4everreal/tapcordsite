@@ -16,6 +16,7 @@ import os
 from dotenv import load_dotenv
 import dj_database_url
 
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -59,6 +60,7 @@ print(f'this is the value of Debug in production: {DEBUG} ')
 INSTALLED_APPS = [
     'tapcord',
     'blog',
+    'tinymce',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -149,7 +151,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
+   },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },

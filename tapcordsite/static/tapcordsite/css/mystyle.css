@@ -229,3 +229,24 @@
     color: #f66808;
     margin-right: 10px;
 }
+
+
+
+/* for the contact page */
+
+.header-image {
+    min-height: 600px;
+    background: url(../img/medical/bg-7.jpg) no-repeat center!important;
+}
+
+.contact-h4 h4 {
+    color:white;
+}
+
+.contact-h4 a {
+    color: #f66808;
+}
+
+.contact-h6{
+    color: #f66808;
+}

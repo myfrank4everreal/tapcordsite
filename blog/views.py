@@ -21,7 +21,8 @@ def posts(request):
 
 
 def postView(request, post_id):
-    post = BlogPost.objects.get(pk=post_id)
+    # post = BlogPost.objects.get(pk=post_id)
+    post = get_object_or_404(BlogPost, id=post_id)
 
     commentform = CommentForm(request.POST or None)
     if request.method == "POST":

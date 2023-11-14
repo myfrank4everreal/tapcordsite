@@ -28,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('tapcord.urls')),
     path("", include('blog.urls'    )),
+    path('tinymce/', include('tinymce.urls')),
 ]
 
 
