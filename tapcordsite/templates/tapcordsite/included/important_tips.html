@@ -1,0 +1,45 @@
+
+{% load static %}
+
+<section style="background-color: white;" class="testimonials">
+    <div class="container">
+        <div class="center-title">
+            <i class="glyphicon glyphicon-volume-up"></i>
+            <h2>Important<strong> Tips</strong></h2>                        
+        </div>
+        <div class="mystyle">
+            <div class="container">
+                <div class="testi-slides">
+                    <ul class="slides">
+                        {% for post in important_posts %}
+                        <li>
+                            <div class="row">
+                                <div class="col-sm-6 text-center">
+                                    <div class="">
+                                        <img style="height: 400px; width:auto !important; " src="{{post.image.url}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 text-center" style="background-color: #f66808;">
+                                    <div style="margin:25px;">
+                                        <h4>{{post.title}}</h4>
+                                        <em>{{post.auto}}</em>
+            
+                                        <p>
+                                            {{post.mid_shotend_desc|safe}}
+
+                                        </p>
+                                        <div class="text-center">
+                                            <a href="{% url 'post' post.id %}" class=" btn btn-white-border btn-lg">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>

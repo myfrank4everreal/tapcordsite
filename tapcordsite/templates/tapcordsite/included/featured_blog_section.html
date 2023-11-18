@@ -8,7 +8,7 @@
             <h2>Featured<strong> post</strong></h2>                        
         </div>
         <div class="row">
-            {% for postitem in posts%}
+            {% for postitem in featured_posts %}
             <div class="col-md-4 margin30">
                 <div class="blog-post">
                     <img src="{{postitem.image.url}}" alt="" class="img-responsive">

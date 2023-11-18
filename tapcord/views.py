@@ -11,13 +11,16 @@ from django.core.mail import send_mail
 
 def home(request):
     
+
+    featured_posts = BlogPost.objects.filter(featuredpost=True)
+    important_posts = BlogPost.objects.filter(important_post=True)
+    
+
     success_msg = ""
     e= ""
     msg=""
     myform = ContactForm()
 
-
-    posts = BlogPost.objects.all()
     
     if request.method == 'POST':
         myform = ContactForm(request.POST)
@@ -65,7 +68,8 @@ def home(request):
     context = {
         
         'news_letter_form':news_letter_form,
-        'posts':posts,
+        'featured_posts':featured_posts,
+        "important_posts":important_posts,
         'myform':myform,
         'success_msg':success_msg
         }

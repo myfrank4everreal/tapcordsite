@@ -145,6 +145,18 @@
     color: #fff;
 }
 
+/* for the knowledge base section */
+.collapse-colored-col .panel-heading {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 10px;
+    border-color: white !important;
+    border-width: 4px;
+    background-color: #f66808;
+    padding: 5px 15px;
+}
+
 /* for the request quota home service banner */
 .ads-section {
     background-color: #041e37;
@@ -230,7 +242,18 @@
     margin-right: 10px;
 }
 
+/* for the important tips section style */
+.testimonials {
+    padding: 60px 0;
+    background-color: #eee;
+    overflow: hidden;
+}
 
+.testimonials .testi-slides img {
+    height: 200px;
+    width: auto;
+    margin-bottom: 10px;
+}
 
 /* for the contact page */
 

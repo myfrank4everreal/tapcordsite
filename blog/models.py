@@ -28,6 +28,7 @@ class BlogPost(models.Model):
     description = models.TextField(blank=True, null=True)
     post_date = models.DateTimeField(auto_now_add=True)
     featuredpost = models.BooleanField(default=False)
+    important_post = models.BooleanField(default=False)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, blank=True, null=True)
     content = HTMLField()
 
@@ -38,6 +39,8 @@ class BlogPost(models.Model):
     def shotend_desc(self):
         return self.description[:200] + '...'
 
+    def mid_shotend_desc(self):
+        return self.content[:1000] + '...'
 
     def get_comments(self):
         return self.comments.all().order_by('-time_stamp')
