@@ -10,7 +10,15 @@ urlpatterns = [
     path("contact-us", views.contact, name='contact'),
     path("gallery-view", views.gallery, name='gallery'),
     path("our-services", views.services, name='services'),
-    path("team", views.team, name='team')
+    # path("team", views.team, name='team'),
+
+    # services
+    path("Electrical-services", views.electrical, name='electrical'),
+    path("Plumbing-services", views.plumbing, name='plumbing'),
+    path("Facility-management-services", views.facility, name='facility'),
+    
+
 ]
+
 
 

@@ -32,9 +32,7 @@ def home(request):
             contact_number = myform.cleaned_data['contact_number']
             sender = myform.cleaned_data['email']
             print(sender)
-            
-            
-            
+
             recipients = ['frank4everreal@gmail.com', 'myfran4everreal@gmail.com']
             
             # if message:
@@ -135,6 +133,16 @@ def services(request):
 
 
 
-def team(request):
+def electrical(request):
     context = {}
-    return render(request, 'tapcord/team.html', context)
+    return render(request, 'tapcord/electrical.html', context)
+
+
+def plumbing(request):
+    context = {}
+    return render(request, 'tapcord/plumbing.html', context)
+
+
+def facility(request):
+    context = {}
+    return render(request, 'tapcord/facility.html', context)
