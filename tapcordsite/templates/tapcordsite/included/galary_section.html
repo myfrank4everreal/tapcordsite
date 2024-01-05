@@ -1,0 +1,41 @@
+
+{% load static %}
+
+        <div class="custom-breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Gallery</h2>
+                    </div>
+                </div>
+            </div>
+        </div><!--breadcrumb-->
+        <div class="divide70"></div>
+
+        <div class="container">
+            <div class="row">
+                {% for item in featured_galary %}
+                <div class="col-sm-6 col-md-3 margin20 ">
+                    <div class="gallery">
+                        <!-- <img src="{% static 'tapcordsite/img/medical/service-1.jpg' %}" alt="gallery-img" class="img-responsive"> -->
+                        <img src="{{item.image.url}}" alt="gallery-img" class="img-responsive">
+                        
+                        <div class="gallery-overlay">
+                            <p><a href="{{item.image.url}}" class="show-image"><i class="glyphicon glyphicon-eye-open"></i></a></p>
+                        </div>
+                    </div>
+                </div><!--col-->
+                {% endfor %}
+               
+            </div>
+            <div class="divide10"></div>
+            <ul class="pagination pull-right">
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">...</a></li>
+            </ul>
+        </div>
+
+  <div class="divide40"></div>

@@ -233,7 +233,7 @@
 /* about us css style */
 .parallax {
     min-height: 600px;
-    background: url(../img/medical/bg-5.jpg) no-repeat left top !important;
+    background: url(../img/slider/tapcord_barnner.jpeg) no-repeat left top !important;
 }
 
 /* for the check boxes in about page */
@@ -266,6 +266,9 @@
     color:white;
 }
 
+.contact-p-white {
+    color:white;
+}
 .contact-h4 a {
     color: #f66808;
 }

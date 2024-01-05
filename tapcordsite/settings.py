@@ -133,6 +133,8 @@ DATABASES = {
     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
 
+
+
 # for email smtp
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'

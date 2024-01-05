@@ -15,7 +15,7 @@ def home(request):
     featured_posts = BlogPost.objects.filter(featuredpost=True)
     important_posts = BlogPost.objects.filter(important_post=True)
     
-
+    featured_galary = Gallery.objects.filter(featuredimage=True)
     success_msg = ""
     e= ""
     msg=""
@@ -64,7 +64,7 @@ def home(request):
 
     news_letter_form = NewsLetterMember()
     context = {
-        
+        'featured_galary':featured_galary,
         'news_letter_form':news_letter_form,
         'featured_posts':featured_posts,
         "important_posts":important_posts,
