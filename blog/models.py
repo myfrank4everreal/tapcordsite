@@ -1,6 +1,5 @@
 from django.db import models
 from datetime import datetime
-from tinymce.models import HTMLField
 
 
 
@@ -30,7 +29,7 @@ class BlogPost(models.Model):
     featuredpost = models.BooleanField(default=False)
     important_post = models.BooleanField(default=False)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, blank=True, null=True)
-    content = HTMLField()
+    
 
     def __str__(self):
         return self.title

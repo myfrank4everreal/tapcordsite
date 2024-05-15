@@ -33,15 +33,11 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 
-if os.getenv("DEBUG") == "True" :
-    DEBUG = os.getenv("DEBUG")
-else:
-    DEBUG = os.getenv("DEBUG") == "False"
-    
+DEBUG = os.getenv("DEBUG" "True") == "True"
 
-DEBUG = "True"
 
-ALLOWED_HOSTS = ['tapcord.onrender.com', 'localhost', '127.0.0.1']
+
+ALLOWED_HOSTS = ["https://tapcord.onrender.com", 'tapcord.onrender.com', 'localhost', '127.0.0.1', '::1']
 
 # if DEBUG == "True" :
 #     ALLOWED_HOSTS = []
@@ -60,7 +56,11 @@ print(f'this is the value of Debug in production: {DEBUG} ')
 INSTALLED_APPS = [
     'tapcord',
     'blog',
-    'tinymce',
+
+    'ckeditor',
+    'ckeditor_uploader',
+
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -108,17 +108,6 @@ WSGI_APPLICATION = 'tapcordsite.wsgi.application'
 
 
 # Database
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         # Feel free to alter this value to suit your needs.
-#         default='postgres://tapcord_database_user:Tj2KeZI1q3cbhnO6gyqYMSU1qy1rsjSm@dpg-cl1c608p2gis739ajpkg-a.oregon-postgres.render.com/tapcord_database',
-        
-#         conn_max_age=600
-#     )
-# }
 
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -128,6 +117,33 @@ WSGI_APPLICATION = 'tapcordsite.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+USER = os.getenv('USER')
+PASSWORD = os.getenv('PASSWORD')
+
+DATABASES = {
+    'default': {
+    'ENGINE': 'website_postgress_tapcord',
+    'NAME': 'website-posgresql-presictravels',
+    'USER': USER,
+    'PASSWORD': PASSWORD, # Replace with the actual password
+    'HOST': 'dpg-cp2almn79t8c73fq5nd0-a',
+
+    'PORT': '5432',
+    }
+
+}
+
+DATABASE_URL = os.getenv('DATABASE_URL ')
+# DATABASES = {
+#     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+#     }
+
+# this will enable database update from development environmet
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+
 
 DATABASES = {
     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
@@ -175,6 +191,68 @@ USE_I18N = True
 USE_TZ = True
 
 
+
+#ckeditor 
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
+# compreser for deployment
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage", 
+    },
+}
+
+# this helps to logg in bugs even when Debug is set to False
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    # 'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'django.server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[{server_time}] {message}',
+            'style': '{',
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            #'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+        },
+        'django.server': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'django.server',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            #'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'mail_admins'],
+            'level': 'INFO',
+        },
+        'django.server': {
+            'handlers': ['django.server'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    }
+}
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -190,7 +268,7 @@ STATICFILES_DIRS = [
     
 ]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
