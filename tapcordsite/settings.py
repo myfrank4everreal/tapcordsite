@@ -145,9 +145,9 @@ DATABASES['default'].update(db_from_env)
 
 
 
-DATABASES = {
-    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
-    }
+# DATABASES = {
+#     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+#     }
 
 
 
@@ -196,9 +196,13 @@ USE_TZ = True
 CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 # compreser for deployment
 
+
 STORAGES = {
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage", 
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
+    },
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
 }
 
