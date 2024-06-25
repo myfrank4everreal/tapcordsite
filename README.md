@@ -1,5 +1,4 @@
 
-Tapcordsite
 Tapcordsite is a comprehensive web application project built using Django. It includes several modules and functionalities aimed at creating a robust and scalable web platform.
 
 Features
